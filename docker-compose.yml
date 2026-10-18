@@ -1,0 +1,16 @@
+# One service. The compose file exists to make "run it in a container" a single
+# command and to show the file-persistence option wired up with a volume.
+services:
+  flowboard:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PERSISTENCE: file           # survive restarts; use "memory" for ephemeral
+      DATA_FILE: /data/boards.json
+      # WEBHOOK_URL: https://hooks.slack.com/services/...   # optional notifications
+    volumes:
+      - flowboard-data:/data
+
+volumes:
+  flowboard-data:
