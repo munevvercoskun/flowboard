@@ -1,0 +1,16 @@
+{
+  "name": "flowboard",
+  "version": "1.0.0",
+  "description": "A Kanban board REST API built as a modular monolith to showcase software design & architecture (COE 692)",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test",
+    "demo": "node scripts/demo.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
